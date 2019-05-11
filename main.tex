@@ -76,7 +76,17 @@ shapes.geometric}
 
 \tableofcontents
 
-\section{Interior product}
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+\section{Non-gravitational theory}
+
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+\subsection{Differential geometry}
+
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+
+\paragraph{Interior product}
 
 Let $z$ be a vector, $\omega$ be a $1$-form, $\chi$ be a $k$-form. 
 The \emph{interior product} is defined inductively as the bilinear map
@@ -85,17 +95,18 @@ satisfying
 z \intprod \omega &\coloneqq \rfun{\omega}{z}\,, \\
 z \intprod \rbr{\omega \wedge \chi} &\coloneqq
 	\rbr{z\intprod\omega}\wedge \chi - \omega \wedge \rbr{z\intprod \chi}\,.
+\label{eq:anti-prod-100}
 \end{align}
-Anti-product rule.
+\Cref{eq:anti-prod-100} is also known as the anti-product rule.
 
-For a $p$-form $\phi$,
+By inductiion one can show that for a $p$-form $\phi$,
 \begin{align}
 z \intprod \rbr{\phi \wedge \chi} =
 	\rbr{z\intprod\phi}\wedge \chi +
 		\rbr{-}^{p} \chi \wedge \rbr{z\intprod \chi}\,.
 \end{align}
 
-\section{Hodge star}
+\paragraph{Hodge star}
 
 Let $\omega$ be an $1$-form, $\chi$ be a $k$-form. The Hodge star
 $\star$ is defined inductively as the linear map \cite[sec.\ 24]{Burke1985}
@@ -105,18 +116,22 @@ $\star$ is defined inductively as the linear map \cite[sec.\ 24]{Burke1985}
 \label{eq:hodge-100}
 \end{align}
 
-\section{Covariant differential of U(1)-gauge field}
-$\chi$ a $\BbbC$-valued $k$-form
+\subsection{Connection on the principal bundle}
+
+\paragraph{Covariant differential}
+Let $\chi$ be a $\BbbC$-valued $k$-form. The \emph{covariant differential} of 
+$\chi$ reads
 \begin{align}
 \DD\chi \coloneqq \rbr{\dd - \ii e A}\wedge \chi,
 \qquad
 \DD\chi^* \coloneqq \rbr{\dd + \ii e A}\wedge \chi^*\,,
 \end{align}
-$A$ the $\mfraku(1)$-valued connection form.
+where $A$ is a $\mfraku(1)$-valued \emph{connection form}.
 
-\section{Covariant codifferential}
-Define the covariant codifferential of a $\BbbC$-valued $k$-form $\phi$ as 
-follows. Let $\chi$ be an arbitrary $\BbbC$-valued $(k-1)$-form.
+\paragraph{Covariant codifferential}
+The \emph{covariant codifferential} $\DD^\dagger$ is the adjoint of the 
+covariant differential $\DD$ in the following sense. Let $\phi$ be a 
+$\BbbC$-valued $k$-form, $\chi$ be a $\BbbC$-valued $(k-1)$-form.
 \begin{align}
 \int \dd\rbr{\chi^* \wedge \star \phi} &\equiv
 \int \dd \chi^* \wedge \star \phi - (-)^{k} \chi^* \wedge \dd\star\phi
@@ -141,7 +156,7 @@ follows. Let $\chi$ be an arbitrary $\BbbC$-valued $(k-1)$-form.
 	\rbr{\dd - \ii e A} \wedge \star \phi\,.
 \end{empheq}
 
-\section{Maxwell--Klein--Fock--Gordon theory}
+\subsection{Maxwell--Klein--Fock--Gordon theory}
 \begin{align}
 S = \int -\DD\phi^*\wedge\star\DD\phi - m^2 \phi^*\wedge\star\phi
 	-\frac{1}{2} F \wedge \star F.
@@ -156,8 +171,8 @@ S = \int -\DD\phi^*\wedge\star\DD\phi - m^2 \phi^*\wedge\star\phi
 \dva_{\text{m}} \rbr{\DD \phi^*\wedge\star\DD\phi} &= 
 \dd\rbr{\dva\phi^*\wedge\star\DD\phi + \dva\phi\wedge\star\DD\phi^*}
 \\
-&\quad\,+
-\dva\phi^*\wedge\star\DD^{\dagger}\DD\phi +
+&\quad\,-
+\dva\phi^*\wedge\star\DD^{\dagger}\DD\phi -
 \dva\phi\wedge\star\DD^{\dagger}\DD\phi^*
 \\
 &\quad\,+
@@ -178,12 +193,12 @@ S = \int -\DD\phi^*\wedge\star\DD\phi - m^2 \phi^*\wedge\star\phi
 \dva\phi\wedge\star\rbr{\DD^{\dagger}\DD-m^2}\phi^*
 \nonumber \\
 &\quad\,+
-\dva A\wedge\rbr{-\dd{\star F} +
+\dva A\wedge\rbr{\dd{\star F} -
 	\ii e \rbr{\phi^* \star\DD\phi - \phi \star\DD\phi^*}}.
 \end{align}
 
-\subsection{Lorenz gauge}
-The Laplace--de Rham operator, or in our signature of metric the d'Alembertian
+\subsubsection{Lorenz gauge}
+The Laplace--de Rham operator, or in our metric signature the d'Alembertian
 \begin{align}
 \square^2 \coloneqq \rbr{\dd + \dd^{\dagger}}^2 =
 	\dd \dd^{\dagger} + \dd^{\dagger} \dd\,.
@@ -199,7 +214,17 @@ One would like to have $\dd \dd^{\dagger} A = 0$, or $\dd^{\dagger} A =
 \end{align}
 which is the Lorenz gauge\cite{Lorenz1867,Bladel1991a,Bladel1991b}.
 
-\section{Untwisted orthonormal $k$-cobases}
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+\section{Gravitational theory}
+
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+\subsection{Differential forms}
+
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+
+\paragraph{Untwisted orthonormal $k$-cobases}
 Let $\cbr{\vartheta^{\alpha}}$ be an orthonormal coframe. The orthonormal 
 basis for untwisted $k$-form is defined inductively as
 \begin{align}
@@ -217,7 +242,7 @@ Upon variation of $\vartheta^{\alpha}$, $\vartheta^{\alpha_{1}\alpha_{2}\ldots
 \end{align}
 which can be proved by induction.
 
-\section{Twisted orthonormal $k$-cobases}
+\paragraph{Twisted orthonormal $k$-cobases}
 Let $\cbr{\vartheta^{\alpha}}$ be an orthonormal coframe. The orthonormal 
 basis for twisted $\rbr{D-k}$-form is defined inductively as
 \begin{align}
@@ -239,8 +264,32 @@ Upon variation of $\vartheta^{\alpha}$, $\epsilon_{\alpha_{1}\alpha_{2}\ldots
 \dva \vartheta^{\alpha} \wedge \rbr{\mscre_{\alpha}\intprod 
 	\epsilon_{\alpha_{1}\alpha_{2}\ldots \alpha_{k}}}\,.
 \end{align}
+One can further deduce
+\begin{align}
+\dva_{\vartheta}\star\phi = 
+\dva\vartheta^{\alpha}\wedge\rbr{\mscre_{\alpha}\intprod\star\phi} -
+\star\rbr{\dva\vartheta^{\alpha}\wedge\rbr{\mscre_{\alpha}\intprod\phi}}\,.
+\end{align}
 
+Let $\chi$ be an untwisted $p$-form, $\phi$ another untwisted form.
+\begin{align}\
+\dva_{\vartheta}\rbr{\chi\wedge\star\phi} &=
+	\dva \vartheta^{\alpha}\wedge\cbr{
+		\mscre_{\alpha}\intprod\rbr{\chi\wedge\star\phi} - 
+		\chi\wedge\star\rbr{\mscre_{\alpha}\intprod\phi}}\,.
+\end{align}
 
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+\section{Maxwell--Klein--Fock--Gordon theory}
+
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+
+\begin{align}
+\dva_{\vartheta} S &= \int \dva \vartheta^{\alpha}\wedge\cbr{
+	\mscre_{\alpha}\intprod \mfrakL +
+	\DD \phi^* \wedge \star\rbr{\mscre_{\alpha}\intprod\DD\phi} + 
+	\frac{1}{2} F\wedge\star\rbr{\mscre_{\alpha}\intprod F}}\,.
+\end{align}
 
 %\input{sections/intro}
 %\printbibliography[segment=1,heading=subbibintoc]
