@@ -16,6 +16,8 @@ shapes.geometric}
 \contourlength{2pt}
 
 \input{./preambles/unicode}
+	\setmathfont{XITS Math}[range={
+		"02A30-"02A3E}] % ⨼ etc.
 
 \setdefaultlanguage{english}
 \setotherlanguages{german,french,italian,greek,latin,russian}
@@ -59,7 +61,7 @@ shapes.geometric}
 % \setcounter{secnumdepth}{6}
 % So that paragraph is also numbered
 
-\numberwithin{equation}{subsection}
+%\numberwithin{equation}{subsection}
 
 \title{Differential form}
 \author{Yi-Fan Wang}
@@ -74,40 +76,69 @@ shapes.geometric}
 
 \tableofcontents
 
-\section{Covariant differential}
-$\phi$ a $\BbbC$-valued $0$-form
+\section{Interior product}
+
+Let $z$ be a vector, $\omega$ be a $1$-form, $\chi$ be a $k$-form. 
+The \emph{interior product} is defined inductively as the bilinear map
+satisfying
 \begin{align}
-\DD\phi \coloneqq \rbr{\dd - \ii e A}\wedge \phi,
+z \intprod \omega &\coloneqq \rfun{\omega}{z}\,, \\
+z \intprod \rbr{\omega \wedge \chi} &\coloneqq
+	\rbr{z\intprod\omega}\wedge \chi - \omega \wedge \rbr{z\intprod \chi}\,.
+\end{align}
+Anti-product rule.
+
+For a $p$-form $\phi$,
+\begin{align}
+z \intprod \rbr{\phi \wedge \chi} =
+	\rbr{z\intprod\phi}\wedge \chi +
+		\rbr{-}^{p} \chi \wedge \rbr{z\intprod \chi}\,.
+\end{align}
+
+\section{Hodge star}
+
+Let $\omega$ be an $1$-form, $\chi$ be a $k$-form. The Hodge star
+$\star$ is defined inductively as the linear map \cite[sec.\ 24]{Burke1985}
+\begin{align}
+\star 1 &\coloneqq \mathrm{vol}\,, \\
+\star\rbr{\chi\wedge\omega} &\coloneqq \omega^{\sharp} \intprod \star\chi\,.
+\label{eq:hodge-100}
+\end{align}
+
+\section{Covariant differential of U(1)-gauge field}
+$\chi$ a $\BbbC$-valued $k$-form
+\begin{align}
+\DD\chi \coloneqq \rbr{\dd - \ii e A}\wedge \chi,
 \qquad
-\DD\phi^* \coloneqq \rbr{\dd + \ii e A}\wedge \phi^*,
+\DD\chi^* \coloneqq \rbr{\dd + \ii e A}\wedge \chi^*\,,
 \end{align}
 $A$ the $\mfraku(1)$-valued connection form.
 
 \section{Covariant codifferential}
-Define the covariant codifferential of a $\BbbC$-valued $k$-form $\zeta$ as 
-follows. Let $\eta$ be an arbitrary $\BbbC$-valued $(k-1)$-form.
+Define the covariant codifferential of a $\BbbC$-valued $k$-form $\phi$ as 
+follows. Let $\chi$ be an arbitrary $\BbbC$-valued $(k-1)$-form.
 \begin{align}
-\int \dd\rbr{\eta^* \wedge \star \zeta} &\equiv
-\int \dd \eta^* \wedge \star \zeta - (-)^{k} \eta^* \wedge \dd\star\zeta
+\int \dd\rbr{\chi^* \wedge \star \phi} &\equiv
+\int \dd \chi^* \wedge \star \phi - (-)^{k} \chi^* \wedge \dd\star\phi
 \eqqcolon
-\int \DD \eta^* \wedge \star \zeta - \eta^* \wedge \star\DD^{\dagger}\zeta
+\int \DD \chi^* \wedge \star \phi - \chi^* \wedge \star\DD^{\dagger}\phi
 \\
 &=
-\int \DD \eta^* \wedge \star \zeta - \ii e A \wedge \eta^* \wedge \star \zeta -
-	(-)^{k} \eta^* \wedge \dd\star\zeta
+\int \DD \chi^* \wedge \star \phi - \ii e A \wedge \chi^* \wedge \star \phi -
+	(-)^{k} \chi^* \wedge \dd\star\phi
 \nonumber \\
 &=
-\int \DD \eta^* \wedge \star \zeta +
-	\eta^* \wedge (-)^{k} \ii e A \wedge \star \zeta -
-	(-)^{k} \eta^* \wedge \dd\star\zeta
+\int \DD \chi^* \wedge \star \phi +
+	\chi^* \wedge (-)^{k} \ii e A \wedge \star \phi -
+	(-)^{k} \chi^* \wedge \dd\star\phi
 \nonumber \\
 &=
-\int \DD \eta^* \wedge \star \zeta - \eta^* \wedge 
-	\star (-)^{k} \star^{-1} \rbr{\dd - \ii e A} \wedge \star \zeta\,.
+\int \DD \chi^* \wedge \star \phi - \chi^* \wedge 
+	\star (-)^{k} \star^{-1} \rbr{\dd - \ii e A} \wedge \star \phi\,.
 \end{align}
 \begin{empheq}[box=\fbox]{align}
-\DD^{\dagger} \zeta = (-)^{k} \star^{-1}
-	\rbr{\dd - \ii e A} \wedge \star \zeta\,.
+\DD^{\dagger} \phi = (-)^{k} \star^{-1}
+	\rbr{\dd - \ii e A} \wedge \star \phi\,.
 \end{empheq}
 
 \section{Maxwell--Klein--Fock--Gordon theory}
@@ -117,12 +148,12 @@ S = \int -\DD\phi^*\wedge\star\DD\phi - m^2 \phi^*\wedge\star\phi
 \end{align}
 
 \begin{align}
-\dva \DD\phi = -\ii e \dva A\phi + \DD \dva \phi.
+\dva_{\text{m}} \DD\phi = -\ii e \dva A\phi + \DD \dva \phi.
 \end{align}
 
 \begin{align}
 \begin{split}
-\dva\rbr{\DD \phi^*\wedge\star\DD\phi} &= 
+\dva_{\text{m}} \rbr{\DD \phi^*\wedge\star\DD\phi} &= 
 \dd\rbr{\dva\phi^*\wedge\star\DD\phi + \dva\phi\wedge\star\DD\phi^*}
 \\
 &\quad\,+
@@ -133,16 +164,18 @@ S = \int -\DD\phi^*\wedge\star\DD\phi - m^2 \phi^*\wedge\star\phi
 \dva A \wedge\rbr{\ii e \rbr{\phi^* \star\DD\phi - \phi\star\DD\phi^*}}\,,
 \end{split}
 \\
-\dva\rbr{F\wedge\star F} &=
+\dva_{\text{m}} \rbr{F\wedge\star F} &=
 	2 \dd\rbr{\dva A \wedge \star F} - 2 \dva A \wedge \dd {\star F}\,.
 \end{align}
 
 \begin{align}
-\dva S &= \int -\dd\rbr{\dva\phi^*\wedge\star\DD\phi + \dva\phi\wedge\star\DD\phi^* + \dva A \wedge\star F}
+\dva_{\text{m}} S &=
+\int -\dd\rbr{\dva\phi^*\wedge\star\DD\phi +
+\dva\phi\wedge\star\DD\phi^* + \dva A \wedge\star F}
 \nonumber \\
 &\quad\,+
 \dva\phi^*\wedge\star\rbr{\DD^{\dagger}\DD-m^2}\phi +
-\dva\phi\wedge\star\rbr{\DD^{\dagger}\DD-m^2}\phi^* +
+\dva\phi\wedge\star\rbr{\DD^{\dagger}\DD-m^2}\phi^*
 \nonumber \\
 &\quad\,+
 \dva A\wedge\rbr{-\dd{\star F} +
@@ -150,17 +183,64 @@ S = \int -\DD\phi^*\wedge\star\DD\phi - m^2 \phi^*\wedge\star\phi
 \end{align}
 
 \subsection{Lorenz gauge}
+The Laplace--de Rham operator, or in our signature of metric the d'Alembertian
 \begin{align}
-\square^2 \coloneqq \rbr{\dd + \dd^{\dagger}}^2 = \dd \dd^{\dagger} + \dd^{\dagger} \dd.
+\square^2 \coloneqq \rbr{\dd + \dd^{\dagger}}^2 =
+	\dd \dd^{\dagger} + \dd^{\dagger} \dd\,.
 \end{align}
 \begin{align}
-\dd{\star F} = \dd\star \dd A = \star (-)^2 \star^{-1}\dd\star\dd A = \star \dd^{\dagger} \dd A = \star\rbr{\square^2 - \dd \dd^{\dagger}} A\,.
+\dd{\star F} = \dd\star \dd A = \star (-)^2 \star^{-1}\dd\star\dd A =
+	\star \dd^{\dagger} \dd A = \star\rbr{\square^2 - \dd \dd^{\dagger}} A\,.
 \end{align}
-One would like to have $\dd \dd^{\dagger} A = 0$, or $\dd^{\dagger} A = \text{const}$. This would be fulfiled if
+One would like to have $\dd \dd^{\dagger} A = 0$, or $\dd^{\dagger} A = 
+\text{const}$. This would be fulfiled if
 \begin{align}
 \dd^{\dagger} A = 0\,,
 \end{align}
 which is the Lorenz gauge\cite{Lorenz1867,Bladel1991a,Bladel1991b}.
+
+\section{Untwisted orthonormal $k$-cobases}
+Let $\cbr{\vartheta^{\alpha}}$ be an orthonormal coframe. The orthonormal 
+basis for untwisted $k$-form is defined inductively as
+\begin{align}
+1&\,, \\
+\vartheta^{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} &\coloneqq 
+	\vartheta^{\alpha_{1}} \wedge \vartheta^{\alpha_{2}\ldots \alpha_{k}}\,.
+\end{align}
+
+Upon variation of $\vartheta^{\alpha}$, $\vartheta^{\alpha_{1}\alpha_{2}\ldots 
+\alpha_{k}}$ goes under
+\begin{align}
+\dva_{\vartheta} \vartheta^{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} &=
+\dva \vartheta^{\alpha} \wedge \rbr{\mscre_{\alpha}\intprod 
+	\vartheta^{\alpha_{1}\alpha_{2}\ldots \alpha_{k}}}\,,
+\end{align}
+which can be proved by induction.
+
+\section{Twisted orthonormal $k$-cobases}
+Let $\cbr{\vartheta^{\alpha}}$ be an orthonormal coframe. The orthonormal 
+basis for twisted $\rbr{D-k}$-form is defined inductively as
+\begin{align}
+\epsilon &\coloneqq \mathrm{vol}\,, \\
+\epsilon_{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} &\coloneqq
+\mscre_{\alpha_{k}} \intprod \epsilon_{\alpha_{1}\ldots \alpha_{k-1}}\,.
+\end{align}
+
+By using \cref{eq:hodge-100} and induction, one can show that
+\begin{align}
+\epsilon_{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} =
+\star \vartheta_{\alpha_{1}\alpha_{2}\ldots \alpha_{k}}\,.
+\end{align}
+
+Upon variation of $\vartheta^{\alpha}$, $\epsilon_{\alpha_{1}\alpha_{2}\ldots 
+\alpha_{k}}$ goes under \cite[sec.\ A.2]{Muench1998}
+\begin{align}
+\dva_{\vartheta} \epsilon_{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} &=
+\dva \vartheta^{\alpha} \wedge \rbr{\mscre_{\alpha}\intprod 
+	\epsilon_{\alpha_{1}\alpha_{2}\ldots \alpha_{k}}}\,.
+\end{align}
+
+
 
 %\input{sections/intro}
 %\printbibliography[segment=1,heading=subbibintoc]
@@ -168,6 +248,6 @@ which is the Lorenz gauge\cite{Lorenz1867,Bladel1991a,Bladel1991b}.
 
 % Let's print the overall heading of the bibliography first:
 %\printbibheading
-%\printbibliography
+\printbibliography
 
 \end{document}
