@@ -17,7 +17,7 @@ shapes.geometric}
 
 \input{./preambles/unicode}
 	\setmathfont{XITS Math}[range={
-		"02A30-"02A3E}] % ⨼ etc.
+		"02A30-"02A3E}] % ти╝ etc.
 
 \setdefaultlanguage{english}
 \setotherlanguages{german,french,italian,greek,latin,russian}
@@ -77,7 +77,7 @@ shapes.geometric}
 \tableofcontents
 
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
-\section{Regular theories}
+\section[$U(1)$--regular theory]{$\msansU(1)$--regular theory}
 
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
 
@@ -131,7 +131,7 @@ S = \int -\dd\phi^*\wedge\star\dd\phi - m^2 \phi^*\wedge\star\phi\,.
 \end{align}
 
 \begin{align}
-\sbr{\dva \DD - \DD \dva }\phi = 0\,.
+\sbr{\dva, \DD}\phi = 0\,.
 \end{align}
 
 \begin{align}
@@ -165,29 +165,33 @@ The theory is invariant under the rigid transformation
 i.e.\ $\dva S \equiv 0$. When the equations of motion are satisfied, infinitesimal 
 transformation leads to
 \begin{align}
-0 &= \dd \mfrakJ\,,
-\\
-\mfrakJ &\coloneqq e\rbr{\phi^*\wedge\star\dd\phi +
-\phi\wedge\star\dd\phi^*}\,.
+0 &= \int -\Lambda\, \dd \mfrakJ\,,
+\nonumber \\
+\mfrakJ &\coloneqq \ii e\rbr{\phi^*\wedge\star\dd\phi +
+\phi\wedge\star\dd\phi^*}
+\end{align}
+which is the Noether current, satisfying the continuity equation
+\begin{align}
+\dd \mfrakJ\, = 0\,.
 \end{align}
 
-\section{Gauge theory}
+\section[$U(1)$ gauge theory]{$\msansU(1)$ gauge theory}
 
 \subsection{Connection on the principal bundle}
 
-\paragraph{Covariant differential}
-Let $\chi$ be a $\BbbC$-valued $k$-form. The \emph{covariant differential} of 
+\paragraph{Exterior covariant derivative}
+Let $\chi$ be a $\BbbC$-valued $k$-form. The \emph{exterior covariant derivative} of 
 $\chi$ reads
 \begin{align}
-\DD\chi \coloneqq \rbr{\dd - \ii e A}\wedge \chi,
+\DD\chi \coloneqq \rbr{\dd - \ii e A}\chi,
 \qquad
-\DD\chi^* \coloneqq \rbr{\dd + \ii e A}\wedge \chi^*\,,
+\DD\chi^* \coloneqq \rbr{\dd + \ii e A}\chi^*\,,
 \end{align}
 where $A$ is a $\mfraku(1)$-valued \emph{connection form}.
 
 \paragraph{Covariant codifferential}
 The \emph{covariant codifferential} $\DD^\dagger$ is the adjoint of the 
-covariant differential $\DD$ in the following sense. Let $\phi$ be a 
+exterior covariant derivative $\DD$ in the following sense. Let $\phi$ be a 
 $\BbbC$-valued $k$-form, $\chi$ be a $\BbbC$-valued $(k-1)$-form.
 \begin{align}
 \int \dd\rbr{\chi^* \wedge \star \phi} &\equiv
@@ -276,7 +280,14 @@ which is the Lorenz gauge\cite{Lorenz1867,Bladel1991a,Bladel1991b}.
 
 
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
-\section{Gravitational theory}
+\section{Poincaré--regular theory}
+
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+
+
+
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+\section{Poincaré gauge theory}
 
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
 
