@@ -77,7 +77,7 @@ shapes.geometric}
 \tableofcontents
 
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
-\section{Non-gravitational theory}
+\section{Non-gravitational theories}
 
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
 
@@ -115,6 +115,15 @@ $\star$ is defined inductively as the linear map \cite[sec.\ 24]{Burke1985}
 \star\rbr{\chi\wedge\omega} &\coloneqq \omega^{\sharp} \intprod \star\chi\,.
 \label{eq:hodge-100}
 \end{align}
+
+Non-gravitational theories features $\sbr{\dva, \star} = 0$, which means
+\cite[sec.\ 3.2]{Muench1998}
+\begin{align}
+\dva g_{\mu\nu} = -2\omega_{(\mu\nu)},\qquad 
+\dva\vartheta^{\mu} = \omega_{\nu}{}^{\mu}\,\vartheta^{\nu}\,;
+\end{align}
+for an orthonormal coframe, the allowed variations are 
+$\omega_{(\alpha\beta)} = 0$.
 
 \subsection{Connection on the principal bundle}
 
@@ -163,12 +172,12 @@ S = \int -\DD\phi^*\wedge\star\DD\phi - m^2 \phi^*\wedge\star\phi
 \end{align}
 
 \begin{align}
-\dva_{\text{m}} \DD\phi = -\ii e \dva A\phi + \DD \dva \phi.
+\dva \DD\phi = -\ii e \dva A\phi + \DD \dva \phi.
 \end{align}
 
 \begin{align}
 \begin{split}
-\dva_{\text{m}} \rbr{\DD \phi^*\wedge\star\DD\phi} &= 
+\dva \rbr{\DD \phi^*\wedge\star\DD\phi} &= 
 \dd\rbr{\dva\phi^*\wedge\star\DD\phi + \dva\phi\wedge\star\DD\phi^*}
 \\
 &\quad\,-
@@ -179,12 +188,12 @@ S = \int -\DD\phi^*\wedge\star\DD\phi - m^2 \phi^*\wedge\star\phi
 \dva A \wedge\rbr{\ii e \rbr{\phi^* \star\DD\phi - \phi\star\DD\phi^*}}\,,
 \end{split}
 \\
-\dva_{\text{m}} \rbr{F\wedge\star F} &=
+\dva \rbr{F\wedge\star F} &=
 	2 \dd\rbr{\dva A \wedge \star F} - 2 \dva A \wedge \dd {\star F}\,.
 \end{align}
 
 \begin{align}
-\dva_{\text{m}} S &=
+\dva S &=
 \int -\dd\rbr{\dva\phi^*\wedge\star\DD\phi +
 \dva\phi\wedge\star\DD\phi^* + \dva A \wedge\star F}
 \nonumber \\
@@ -214,6 +223,11 @@ One would like to have $\dd \dd^{\dagger} A = 0$, or $\dd^{\dagger} A =
 \end{align}
 which is the Lorenz gauge\cite{Lorenz1867,Bladel1991a,Bladel1991b}.
 
+\subsubsection{Noether's first theorem}
+
+\subsubsection{Noether's second theorem}
+
+
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
 \section{Gravitational theory}
 
@@ -236,7 +250,7 @@ basis for untwisted $k$-form is defined inductively as
 Upon variation of $\vartheta^{\alpha}$, $\vartheta^{\alpha_{1}\alpha_{2}\ldots 
 \alpha_{k}}$ goes under
 \begin{align}
-\dva_{\vartheta} \vartheta^{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} &=
+\dva \vartheta^{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} &=
 \dva \vartheta^{\alpha} \wedge \rbr{\mscre_{\alpha}\intprod 
 	\vartheta^{\alpha_{1}\alpha_{2}\ldots \alpha_{k}}}\,,
 \end{align}
@@ -260,36 +274,52 @@ By using \cref{eq:hodge-100} and induction, one can show that
 Upon variation of $\vartheta^{\alpha}$, $\epsilon_{\alpha_{1}\alpha_{2}\ldots 
 \alpha_{k}}$ goes under \cite[sec.\ A.2]{Muench1998}
 \begin{align}
-\dva_{\vartheta} \epsilon_{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} &=
+\dva \epsilon_{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} &=
 \dva \vartheta^{\alpha} \wedge \rbr{\mscre_{\alpha}\intprod 
 	\epsilon_{\alpha_{1}\alpha_{2}\ldots \alpha_{k}}}\,.
 \end{align}
-One can further deduce
+
+\paragraph{Variation of Hodge star}
+In gravitational theories \cite[sec.\ 3.2]{Muench1998} with an orthonormal 
+cobasis,
 \begin{align}
-\dva_{\vartheta}\star\phi = 
+\sbr{\dva, \star}\phi = 
 \dva\vartheta^{\alpha}\wedge\rbr{\mscre_{\alpha}\intprod\star\phi} -
 \star\rbr{\dva\vartheta^{\alpha}\wedge\rbr{\mscre_{\alpha}\intprod\phi}}\,.
 \end{align}
 
-Let $\chi$ be an untwisted $p$-form, $\phi$ another untwisted form.
+Let $\chi$ be a $p$-form, $\phi$ another form \cite[sec.\ 5]{Itin1999}.
 \begin{align}\
-\dva_{\vartheta}\rbr{\chi\wedge\star\phi} &=
-	\dva \vartheta^{\alpha}\wedge\cbr{
-		\mscre_{\alpha}\intprod\rbr{\chi\wedge\star\phi} - 
-		\chi\wedge\star\rbr{\mscre_{\alpha}\intprod\phi}}\,.
+\dva\rbr{\chi\wedge\star\phi} &=
+\dva \chi \wedge \star \phi + \dva \phi \wedge \star \chi -
+	\dva \vartheta^{\alpha} \wedge \Sigma_{\alpha}\,,
+\\
+\Sigma_{\alpha} &\coloneqq \chi \wedge \cbr{
+	\star\rbr{\mscre_{\alpha}\intprod\phi} -
+	\rbr{-}^{p} \rbr{\mscre_{\alpha}\intprod\star\phi}}\,.
 \end{align}
 
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
-\section{Maxwell--Klein--Fock--Gordon theory}
+\subsection{Maxwell--Klein--Fock--Gordon theory}
 
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
 
 \begin{align}
-\dva_{\vartheta} S &= \int \dva \vartheta^{\alpha}\wedge\cbr{
-	\mscre_{\alpha}\intprod \mfrakL +
-	\DD \phi^* \wedge \star\rbr{\mscre_{\alpha}\intprod\DD\phi} + 
-	\frac{1}{2} F\wedge\star\rbr{\mscre_{\alpha}\intprod F}}\,.
+\begin{split}
+\Sigma_{\alpha} &=
+	-\DD\phi^* \wedge \cbr{\star\rbr{\mscre_{\alpha}\intprod \DD\phi} +
+		\rbr{\mscre_{\alpha}\intprod\star\DD\phi}}
+-m^2\phi^*\phi\,\epsilon_{\alpha}
+\\
+&\quad\,
+- \frac{1}{2} F \wedge \cbr{\star\rbr{\mscre_{\alpha}\intprod F} -
+		\rbr{\mscre_{\alpha}\intprod \star F}}\,.
+\end{split}
 \end{align}
+
+\subsubsection{Noether's first theorem}
+
+\subsubsection{Noether's second theorem}
 
 %\input{sections/intro}
 %\printbibliography[segment=1,heading=subbibintoc]
