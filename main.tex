@@ -191,15 +191,15 @@ transformation
 When the equations of motion are satisfied, infinitesimal 
 transformation leads to
 \begin{align}
-0 &= \int \Lambda\, \dd \mfrakJ\,,
+0 &= \int \Lambda\, \dd \mfrakJ_0\,,
 \nonumber \\
-\mfrakJ &\coloneqq \ii e\rbr{- \phi\wedge\star\dd\phi^* +
+\mfrakJ_0 &\coloneqq \ii e\rbr{- \phi\wedge\star\dd\phi^* +
 	\phi^*\wedge\star\dd\phi}\,,
 \end{align}
 which is the Noether current, a twisted $3$-form, satisfying the continuity 
 equation
 \begin{align}
-\dd \mfrakJ\, = 0\,.
+\dd \mfrakJ_0 = 0\,.
 \end{align}
 
 \section[$U(1)$ gauge theory]{$\msansU(1)$ gauge theory}
@@ -250,6 +250,7 @@ S = \int -\DD\phi^*\wedge\star\DD\phi - m^2 \phi^*\wedge\star\phi
 	-\frac{1}{2} F \wedge \star F.
 \end{align}
 
+Variation does not commute with exterior covariant derivative.
 \begin{align}
 \sbr{\dva, \DD}\phi = -\ii e \dva A\phi\,.
 \end{align}
@@ -257,36 +258,39 @@ S = \int -\DD\phi^*\wedge\star\DD\phi - m^2 \phi^*\wedge\star\phi
 \begin{align}
 \begin{split}
 \dva \rbr{\DD \phi^*\wedge\star\DD\phi} &= 
-\dd\rbr{\dva\phi^*\wedge\star\DD\phi + \dva\phi\wedge\star\DD\phi^*}
-\\
-&\quad\,-
-\dva\phi^*\wedge\star\DD^{\dagger}\DD\phi -
-\dva\phi\wedge\star\DD^{\dagger}\DD\phi^*
-\\
-&\quad\,+
-\dva A \wedge\rbr{\ii e \rbr{\phi^* \star\DD\phi - \phi\star\DD\phi^*}}\,,
+\dd\rbr{\dva\phi^* \star\DD\phi + \dva\phi \star\DD\phi^*} +
+	\dva\phi^*\wedge\star\DD^{\dagger}\DD\phi +
+	\dva\phi\wedge\star\DD^{\dagger}\DD\phi^*
+\\ &\quad\,+
+\dva A \wedge \mfrakJ_A \,,
+\qquad
+\mfrakJ_A \coloneqq 
+	\ii e \rbr{\phi^* \star\DD\phi - \phi\star\DD\phi^*}\,,
 \end{split}
 \\
 \dva \rbr{F\wedge\star F} &=
-	2 \dd\rbr{\dva A \wedge \star F} - 2 \dva A \wedge \dd {\star F}\,.
+	2\,\dva F \wedge \star F
+\\ &=
+	2\,\dd\rbr{\dva A \wedge \star F} + 2\,\dva A \wedge \dd {\star F}\,.
 \end{align}
 
+Variation of the action
 \begin{align}
 \dva S &=
-\int -\dd\rbr{\dva\phi^*\wedge\star\DD\phi +
-\dva\phi\wedge\star\DD\phi^* + \dva A \wedge\star F}
+\int \dd\rbr{-\dva\phi^*\wedge\star\DD\phi -
+\dva\phi\wedge\star\DD\phi^* - \dva A \wedge\star F}
 \nonumber \\
-&\quad\,+
-\dva\phi^*\wedge\star\rbr{\DD^{\dagger}\DD-m^2}\phi +
-\dva\phi\wedge\star\rbr{\DD^{\dagger}\DD-m^2}\phi^*
+&\quad\,-
+\dva\phi^*\wedge\star\rbr{\DD^{\dagger}\DD + m^2}\phi -
+\dva\phi\wedge\star\rbr{\DD^{\dagger}\DD + m^2}\phi^*
 \nonumber \\
-&\quad\,+
-\dva A\wedge\rbr{\dd{\star F} -
-	\ii e \rbr{\phi^* \star\DD\phi - \phi \star\DD\phi^*}}.
+&\quad\,-
+\dva A\wedge\rbr{\dd{\star F} - \mfrakJ_{A}}.
 \end{align}
 
 \subsubsection{Lorenz gauge}
-The Laplace--de Rham operator, or in our metric signature the d'Alembertian
+The Laplace--de Rham operator, or in our Lorentzian metric signature the 
+d'Alembertian
 \begin{align}
 \square^2 \coloneqq \rbr{\dd + \dd^{\dagger}}^2 =
 	\dd \dd^{\dagger} + \dd^{\dagger} \dd\,.
