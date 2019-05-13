@@ -125,52 +125,79 @@ Non-gravitational theories features $\sbr{\dva, \star} = 0$, which means
 for an orthonormal coframe, the allowed variations are 
 $\omega_{(\alpha\beta)} = 0$.
 
+
+\paragraph{Codifferential}
+The \emph{codifferential} $\dd^\dagger$ is the adjoint of the 
+exterior derivative $\dd$ in the following sense. Let $\phi$ be a 
+$k$-form, $\chi$ be a $(k-1)$-form.
+\begin{align}
+\int \dd\rbr{\chi^* \wedge \star \phi} &\equiv
+\int \dd \chi^* \wedge \star \phi - (-)^{k} \chi^* \wedge \dd\star\phi
+\eqqcolon
+\int \dd \chi^* \wedge \star \phi - \chi^* \wedge \star\dd^{\dagger}\phi
+\\
+&=
+\int \dd \chi^* \wedge \star \phi - \chi^* \wedge 
+	\star (-)^{k} \star^{-1} \dd \star \phi\,.
+\end{align}
+\begin{empheq}[box=\fbox]{align}
+\dd^{\dagger} \phi = (-)^{k} \star^{-1} \dd \star \phi\,.
+\end{empheq}
+
+
 \subsection{Complex Klein--Fock--Gordon theory}
+
+The action reads
 \begin{align}
 S = \int -\dd\phi^*\wedge\star\dd\phi - m^2 \phi^*\wedge\star\phi\,.
 \end{align}
 
+Variation commutes with exterior derivative
 \begin{align}
-\sbr{\dva, \DD}\phi = 0\,.
+\sbr{\dva, \dd}\phi = 0\,.
 \end{align}
 
+A generic variation of the kinetic terms reads
 \begin{align}
 \begin{split}
 \dva \rbr{\dd \phi^*\wedge\star\dd\phi} &= 
 \dd\rbr{\dva\phi^*\wedge\star\dd\phi + \dva\phi\wedge\star\dd\phi^*}
 \\
-&\quad\,-
-\dva\phi^*\wedge\star\dd^{\dagger}\dd\phi -
+&\quad\,+
+\dva\phi^*\wedge\star\dd^{\dagger}\dd\phi +
 \dva\phi\wedge\star\dd^{\dagger}\dd\phi^*\,.
 \end{split}
 \end{align}
 
+A generic variation of the actionreads
 \begin{align}
 \dva S &=
-\int -\dd\rbr{\dva\phi^*\wedge\star\dd\phi +
+\int \dd\rbr{-\dva\phi^*\wedge\star\dd\phi -
 \dva\phi\wedge\star\dd\phi^*}
 \nonumber \\
-&\quad\,+
-\dva\phi^*\wedge\star\rbr{\DD^{\dagger}\DD-m^2}\phi +
-\dva\phi\wedge\star\rbr{\DD^{\dagger}\DD-m^2}\phi^*\,.
+&\quad\,-
+\dva\phi^*\wedge\star\rbr{\dd^{\dagger}\dd+m^2}\phi -
+\dva\phi\wedge\star\rbr{\dd^{\dagger}\dd+m^2}\phi^*\,.
 \end{align}
 
 
 \subsubsection{Noether current}
-The theory is invariant under the rigid transformation
+The action is invariant ($\dva_{\Lambda} S \equiv 0$) under the rigid 
+transformation
 \begin{align}
 \phi \to \ee^{-\ii e \Lambda} \phi\,,\qquad
-\phi^* \to \ee^{+\ii e \Lambda} \phi^*\,,
+\phi^* \to \ee^{+\ii e \Lambda} \phi^*\,.
 \end{align}
-i.e.\ $\dva S \equiv 0$. When the equations of motion are satisfied, infinitesimal 
+When the equations of motion are satisfied, infinitesimal 
 transformation leads to
 \begin{align}
-0 &= \int -\Lambda\, \dd \mfrakJ\,,
+0 &= \int \Lambda\, \dd \mfrakJ\,,
 \nonumber \\
-\mfrakJ &\coloneqq \ii e\rbr{\phi^*\wedge\star\dd\phi +
-\phi\wedge\star\dd\phi^*}
+\mfrakJ &\coloneqq \ii e\rbr{- \phi\wedge\star\dd\phi^* +
+	\phi^*\wedge\star\dd\phi}\,,
 \end{align}
-which is the Noether current, satisfying the continuity equation
+which is the Noether current, a twisted $3$-form, satisfying the continuity 
+equation
 \begin{align}
 \dd \mfrakJ\, = 0\,.
 \end{align}
@@ -205,16 +232,16 @@ $\BbbC$-valued $k$-form, $\chi$ be a $\BbbC$-valued $(k-1)$-form.
 \nonumber \\
 &=
 \int \DD \chi^* \wedge \star \phi +
-	\chi^* \wedge (-)^{k} \ii e A \wedge \star \phi -
+	\chi^* \wedge (-)^{k} \ii e A \star \phi -
 	(-)^{k} \chi^* \wedge \dd\star\phi
 \nonumber \\
 &=
 \int \DD \chi^* \wedge \star \phi - \chi^* \wedge 
-	\star (-)^{k} \star^{-1} \rbr{\dd - \ii e A} \wedge \star \phi\,.
+	\star (-)^{k} \star^{-1} \rbr{\dd - \ii e A} \star \phi\,.
 \end{align}
 \begin{empheq}[box=\fbox]{align}
 \DD^{\dagger} \phi = (-)^{k} \star^{-1}
-	\rbr{\dd - \ii e A} \wedge \star \phi\,.
+	\rbr{\dd - \ii e A} \star \phi\,.
 \end{empheq}
 
 \subsection{Maxwell--Klein--Fock--Gordon theory}
@@ -224,7 +251,7 @@ S = \int -\DD\phi^*\wedge\star\DD\phi - m^2 \phi^*\wedge\star\phi
 \end{align}
 
 \begin{align}
-\dva \DD\phi = -\ii e \dva A\phi + \DD \dva \phi.
+\sbr{\dva, \DD}\phi = -\ii e \dva A\phi\,.
 \end{align}
 
 \begin{align}
