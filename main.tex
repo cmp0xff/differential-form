@@ -145,7 +145,7 @@ $k$-form, $\chi$ be a $(k-1)$-form.
 \end{empheq}
 
 
-\subsection{Complex Klein--Fock--Gordon theory}
+\subsection{Complex scalar field}
 
 The action reads
 \begin{align}
@@ -182,8 +182,11 @@ A generic variation of the actionreads
 
 
 \subsubsection{Noether current}
-The action is invariant ($\dva_{\Lambda} S \equiv 0$) under the rigid 
-transformation
+The action is invariant
+\begin{align}
+\dva_{\Lambda} S \equiv 0
+\end{align}
+under the rigid transformation
 \begin{align}
 \phi \to \ee^{-\ii e \Lambda} \phi\,,\qquad
 \phi^* \to \ee^{+\ii e \Lambda} \phi^*\,.
@@ -244,7 +247,8 @@ $\BbbC$-valued $k$-form, $\chi$ be a $\BbbC$-valued $(k-1)$-form.
 	\rbr{\dd - \ii e A} \star \phi\,.
 \end{empheq}
 
-\subsection{Maxwell--Klein--Fock--Gordon theory}
+\subsection[$U(1)$-gauged complex scalar field theory]%
+{$\msansU(1)$-gauged complex scalar field theory}
 \begin{align}
 S = \int -\DD\phi^*\wedge\star\DD\phi - m^2 \phi^*\wedge\star\phi
 	-\frac{1}{2} F \wedge \star F.
@@ -323,7 +327,6 @@ continuity equation $\dd \mfrakJ_A = 0$.
 
 If the transformation is gauge with a compact support, the boundary term can be
 dropped, and one obtains the Noether identity
-identity
 \begin{align}
 123
 \end{align}
@@ -334,6 +337,32 @@ identity
 
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
 
+
+\subsection{Complex scalar field}
+
+\subsubsection{Noether current}
+The action is invariant up to a total differential
+\begin{align}
+\dva_{\Lambda} S = \int \dd\rbr{z \intprod \mfrakL}
+\end{align}
+under the rigid transformation
+\begin{align}
+\phi \to \ee^{-\ii e \Lambda} \phi\,,\qquad
+\phi^* \to \ee^{+\ii e \Lambda} \phi^*\,.
+\end{align}
+When the equations of motion are satisfied, infinitesimal 
+transformation leads to
+\begin{align}
+0 &= \int \Lambda\, \dd \mfrakJ_0\,,
+\nonumber \\
+\mfrakJ_0 &\coloneqq \ii e\rbr{- \phi\wedge\star\dd\phi^* +
+	\phi^*\wedge\star\dd\phi}\,,
+\end{align}
+which is the Noether current, a twisted $3$-form, satisfying the continuity 
+equation
+\begin{align}
+\dd \mfrakJ_0 = 0\,.
+\end{align}
 
 
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
@@ -408,7 +437,8 @@ Let $\chi$ be a $p$-form, $\phi$ another form \cite[sec.\ 5]{Itin1999}.
 \end{align}
 
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
-\subsection{Maxwell--Klein--Fock--Gordon theory}
+\subsection[$U(1)$-gauged complex scalar field theory]%
+{$\msansU(1)$-gauged complex scalar field theory}
 
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
 
