@@ -131,13 +131,13 @@ The \emph{codifferential} $\dd^\dagger$ is the adjoint of the
 exterior derivative $\dd$ in the following sense. Let $\phi$ be a 
 $k$-form, $\chi$ be a $(k-1)$-form.
 \begin{align}
-\int \dd\rbr{\chi^* \wedge \star \phi} &\equiv
-\int \dd \chi^* \wedge \star \phi - (-)^{k} \chi^* \wedge \dd\star\phi
+\dd\rbr{\chi^* \wedge \star \phi} &\equiv
+\dd \chi^* \wedge \star \phi - (-)^{k} \chi^* \wedge \dd\star\phi
 \eqqcolon
-\int \dd \chi^* \wedge \star \phi - \chi^* \wedge \star\dd^{\dagger}\phi
+\dd \chi^* \wedge \star \phi - \chi^* \wedge \star\dd^{\dagger}\phi
 \\
 &=
-\int \dd \chi^* \wedge \star \phi - \chi^* \wedge 
+\dd \chi^* \wedge \star \phi - \chi^* \wedge 
 	\star (-)^{k} \star^{-1} \dd \star \phi\,.
 \end{align}
 \begin{empheq}[box=\fbox]{align}
@@ -149,7 +149,12 @@ $k$-form, $\chi$ be a $(k-1)$-form.
 
 The action reads
 \begin{align}
-S = \int -\dd\phi^*\wedge\star\dd\phi - m^2 \phi^*\wedge\star\phi\,.
+S &= \int -\dd\phi^*\wedge\star\dd\phi - m^2 \phi^*\wedge\star\phi
+\\
+&= \int -\frac{1}{2}\rbr{\dd\phi^*\wedge\star\dd\phi 
+		+ \dd\phi\wedge\star\dd\phi^*}
+		- \frac{1}{2} m^2 \rbr{\phi^*\wedge\star\phi
+		+ \phi\wedge\star\phi^*}
 \end{align}
 
 Variation commutes with exterior derivative
@@ -184,20 +189,20 @@ A generic variation of the actionreads
 \subsubsection{Noether current}
 The action is invariant
 \begin{align}
-\dva_{\Lambda} S \equiv 0
+\dva_{\lambda} S \equiv 0
 \end{align}
 under the rigid transformation
 \begin{align}
-\phi \to \ee^{-\ii e \Lambda} \phi\,,\qquad
-\phi^* \to \ee^{+\ii e \Lambda} \phi^*\,.
+\phi \to \ee^{-\ii e \lambda} \phi\,,\qquad
+\phi^* \to \ee^{+\ii e \lambda} \phi^*\,.
 \end{align}
 When the equations of motion are satisfied, infinitesimal 
 transformation leads to
 \begin{align}
-0 &= \int \Lambda\, \dd \mfrakJ_0\,,
+0 &= \int \lambda\, \dd \mfrakJ_0\,,
 \nonumber \\
-\mfrakJ_0 &\coloneqq \ii e\rbr{- \phi\wedge\star\dd\phi^* +
-	\phi^*\wedge\star\dd\phi}\,,
+\mfrakJ_0 &\coloneqq \ii e\rbr{\phi^*\wedge\star\dd\phi
+	- \phi\wedge\star\dd\phi^*}\,,
 \end{align}
 which is the Noether current, a twisted $3$-form, satisfying the continuity 
 equation
@@ -224,22 +229,22 @@ The \emph{covariant codifferential} $\DD^\dagger$ is the adjoint of the
 exterior covariant derivative $\DD$ in the following sense. Let $\phi$ be a 
 $\BbbC$-valued $k$-form, $\chi$ be a $\BbbC$-valued $(k-1)$-form.
 \begin{align}
-\int \dd\rbr{\chi^* \wedge \star \phi} &\equiv
-\int \dd \chi^* \wedge \star \phi - (-)^{k} \chi^* \wedge \dd\star\phi
+\dd\rbr{\chi^* \wedge \star \phi} &\equiv
+\dd \chi^* \wedge \star \phi - (-)^{k} \chi^* \wedge \dd\star\phi
 \eqqcolon
-\int \DD \chi^* \wedge \star \phi - \chi^* \wedge \star\DD^{\dagger}\phi
+\DD \chi^* \wedge \star \phi - \chi^* \wedge \star\DD^{\dagger}\phi
 \\
 &=
-\int \DD \chi^* \wedge \star \phi - \ii e A \wedge \chi^* \wedge \star \phi -
+\DD \chi^* \wedge \star \phi - \ii e A \wedge \chi^* \wedge \star \phi -
 	(-)^{k} \chi^* \wedge \dd\star\phi
 \nonumber \\
 &=
-\int \DD \chi^* \wedge \star \phi +
+\DD \chi^* \wedge \star \phi +
 	\chi^* \wedge (-)^{k} \ii e A \star \phi -
 	(-)^{k} \chi^* \wedge \dd\star\phi
 \nonumber \\
 &=
-\int \DD \chi^* \wedge \star \phi - \chi^* \wedge 
+\DD \chi^* \wedge \star \phi - \chi^* \wedge 
 	\star (-)^{k} \star^{-1} \rbr{\dd - \ii e A} \star \phi\,.
 \end{align}
 \begin{empheq}[box=\fbox]{align}
@@ -337,43 +342,7 @@ dropped, and one obtains the Noether identity
 
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
 
-
-\subsection{Complex scalar field}
-
-\subsubsection{Noether current}
-The action is invariant up to a total differential
-\begin{align}
-\dva_{\Lambda} S = \int \dd\rbr{z \intprod \mfrakL}
-\end{align}
-under the rigid transformation
-\begin{align}
-\phi \to \ee^{-\ii e \Lambda} \phi\,,\qquad
-\phi^* \to \ee^{+\ii e \Lambda} \phi^*\,.
-\end{align}
-When the equations of motion are satisfied, infinitesimal 
-transformation leads to
-\begin{align}
-0 &= \int \Lambda\, \dd \mfrakJ_0\,,
-\nonumber \\
-\mfrakJ_0 &\coloneqq \ii e\rbr{- \phi\wedge\star\dd\phi^* +
-	\phi^*\wedge\star\dd\phi}\,,
-\end{align}
-which is the Noether current, a twisted $3$-form, satisfying the continuity 
-equation
-\begin{align}
-\dd \mfrakJ_0 = 0\,.
-\end{align}
-
-
-%1234567890123456789012345678901234567890123456789012345678901234567890123456789
-\section{Poincaré gauge theory}
-
-%1234567890123456789012345678901234567890123456789012345678901234567890123456789
-
-%1234567890123456789012345678901234567890123456789012345678901234567890123456789
-\subsection{Differential forms}
-
-%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+\subsection{Differential geometry}
 
 \paragraph{Untwisted orthonormal $k$-cobases}
 Let $\cbr{\vartheta^{\alpha}}$ be an orthonormal coframe. The orthonormal 
@@ -383,15 +352,6 @@ basis for untwisted $k$-form is defined inductively as
 \vartheta^{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} &\coloneqq 
 	\vartheta^{\alpha_{1}} \wedge \vartheta^{\alpha_{2}\ldots \alpha_{k}}\,.
 \end{align}
-
-Upon variation of $\vartheta^{\alpha}$, $\vartheta^{\alpha_{1}\alpha_{2}\ldots 
-\alpha_{k}}$ goes under
-\begin{align}
-\dva \vartheta^{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} &=
-\dva \vartheta^{\alpha} \wedge \rbr{\mscre_{\alpha}\intprod 
-	\vartheta^{\alpha_{1}\alpha_{2}\ldots \alpha_{k}}}\,,
-\end{align}
-which can be proved by induction.
 
 \paragraph{Twisted orthonormal $k$-cobases}
 Let $\cbr{\vartheta^{\alpha}}$ be an orthonormal coframe. The orthonormal 
@@ -407,6 +367,156 @@ By using \cref{eq:hodge-100} and induction, one can show that
 \epsilon_{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} =
 \star \vartheta_{\alpha_{1}\alpha_{2}\ldots \alpha_{k}}\,.
 \end{align}
+
+\paragraph{Identities}
+
+Inspired by \cite[eq.\ (3.167)]{Straumann2013}, for a $1$-form $\omega$,
+$\rbr{D-k}$-form $\chi$, one can derive
+\begin{align}
+\omega\wedge\star\chi &= \rbr{-}^{D-k}\star\chi\wedge\omega
+= \rbr{-}^{D-k} \star^{-1}
+	\rbr{\omega^\sharp\intprod\star\star\chi}
+\nonumber \\
+&= \rbr{-}^{D-k} \rbr{-}^{(D-k-1)(k+1)+s}\star
+	\rbr{\omega^\sharp\intprod \rbr{-}^{k(D-k)+s}
+		\star^{-1}\star\chi }
+\nonumber \\
+&= \rbr{-}^{k+1} \star\rbr{\omega^\sharp\intprod \chi }\,.
+\end{align}
+Specifically,
+\begin{align}
+\vartheta^{\alpha}\wedge\epsilon_{\beta\gamma}
+= -\delta^{\alpha}_{\beta}\epsilon_{\gamma}
+	+\delta^{\alpha}_{\gamma}\epsilon_{\beta}\,.
+\end{align}
+
+\paragraph{Translation}
+
+Consider the rigid infinitesimal transformation
+\begin{align}
+\dva_{\lambda}\chi = \lambda\, \pounds_z \chi =
+	\lambda\sbr{z\intprod\dd\chi + \dd\rbr{z\intprod\chi}}\,;
+\end{align}
+`rigid' means
+\begin{align}
+\dva_{\lambda} \vartheta^{\alpha} = 0\,.
+\end{align}
+
+
+\subsection{Complex scalar field}
+
+\subsubsection{Noether current}
+The action is invariant up to a total differential
+\begin{align}
+\dva_{\lambda} S &= \int \lambda\,\dd\rbr{z \intprod \mfrakL}
+\nonumber \\
+&= \int \lambda\,\frac{1}{2}\,\dd\cbr{
+	- z\intprod\sbr{\dd\phi^*\wedge\star\dd\phi +
+	\dd\phi\wedge\star\dd\phi^* +
+	m^2\rbr{\phi^*\,\star\phi
+	+\phi\,\star\phi^*}}}\,,
+\end{align}
+under the rigid infinitesimal transformation
+\begin{align}
+\dva\phi = \lambda\, \pounds_z \phi = \lambda\, z \intprod \dd \phi\,,\qquad
+\dva\phi^* = \lambda\, \pounds_z \phi^* = \lambda\, z \intprod \dd \phi^*\,.
+\end{align}
+
+When the equations of motion are satisfied, infinitesimal 
+transformation leads to
+\begin{align}
+\dva_{\lambda} S = \int \lambda\,\dd\cbr{
+	-\rbr{z\intprod\dd\phi^*}\wedge\star\dd\phi
+	-\rbr{z\intprod\dd\phi}\wedge\star\dd\phi^*}\,.
+\end{align}
+Taking the difference and setting $z = \mscre_{\alpha}$ yields
+\begin{align}
+0 &= \int \lambda\,\dd \mfrakT_{\alpha}, \\
+\begin{split}
+2 \mfrakT_{\alpha} &\coloneqq
+\rbr{\mscre_{\alpha}\intprod\dd\phi^*}\wedge\star\dd\phi +
+\dd\phi^*\wedge\rbr{\mscre_{\alpha}\intprod\star\dd\phi}
+\\
+&\quad\,+
+\rbr{\mscre_{\alpha}\intprod\dd\phi}\wedge\star\dd\phi^* +
+\dd\phi\wedge\rbr{\mscre_{\alpha}\intprod\star\dd\phi^*}
+\\
+&\quad\,-
+m^2\rbr{\phi^*\,\mscre_{\alpha}\intprod\star\phi +
+	\phi\,\mscre_{\alpha}\star\phi^*}\,.
+\end{split}
+\end{align}
+The continuity equation reads
+\begin{align}
+\dd \mfrakT_{\alpha} = 0\,.
+\end{align}
+In components,
+\begin{align}
+\mfrakT_{\alpha} =
+\rbr{\rfun{\mscre_{\alpha}}{\phi^*} \rfun{\mscre^{\beta}}{\phi}+
+	\rfun{\mscre_{\alpha}}{\phi} \rfun{\mscre^{\beta}}{\phi^*}}\,
+		\epsilon_{\beta} - 
+\rfun{\mscre^{\beta}}{\phi^*} \rfun{\mscre_{\beta}}{\phi^*}\,
+	\epsilon_{\alpha}
+- m^2 \phi^* \phi\, \epsilon_{\alpha}\,.
+\end{align}
+
+\subsection{Pure electromagnetic field}
+
+\subsubsection{Noether current}
+The action is invariant up to a total differential
+\begin{align}
+\dva_{\lambda} S &= \int \lambda\,\dd\rbr{z \intprod \mfrakL}
+\nonumber \\
+&= \int \lambda\,\frac{1}{2}\,\dd\cbr{
+	- z\intprod F\wedge\star F }\,,
+\end{align}
+under the rigid infinitesimal transformation
+\begin{align}
+\dva A = 
+\end{align}
+
+When the equations of motion are satisfied, infinitesimal 
+transformation leads to
+\begin{align}
+\dva_{\lambda} S = \int \lambda\,\dd \,.
+\end{align}
+Taking the difference and setting $z = \mscre_{\alpha}$ yields
+\begin{align}
+0 &= \int \lambda\,\dd \mfrakT_{\alpha}, \\
+\begin{split}
+2 \mfrakT_{\alpha} &\coloneqq \,.
+\end{split}
+\end{align}
+The continuity equation reads
+\begin{align}
+\dd \mfrakT_{\alpha} = 0\,.
+\end{align}
+In components,
+\begin{align}
+\mfrakT_{\alpha} = \,.
+\end{align}
+
+
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+\section{Poincaré gauge theory}
+
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+\subsection{Differential forms}
+
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+
+
+Upon variation of $\vartheta^{\alpha}$, $\vartheta^{\alpha_{1}\alpha_{2}\ldots 
+\alpha_{k}}$ goes under
+\begin{align}
+\dva \vartheta^{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} &=
+\dva \vartheta^{\alpha} \wedge \rbr{\mscre_{\alpha}\intprod 
+	\vartheta^{\alpha_{1}\alpha_{2}\ldots \alpha_{k}}}\,,
+\end{align}
+which can be proved by induction.
 
 Upon variation of $\vartheta^{\alpha}$, $\epsilon_{\alpha_{1}\alpha_{2}\ldots 
 \alpha_{k}}$ goes under \cite[sec.\ A.2]{Muench1998}
