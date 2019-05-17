@@ -466,26 +466,36 @@ In components,
 \subsubsection{Noether current}
 The action is invariant up to a total differential
 \begin{align}
-\dva_{\lambda} S &= \int \lambda\,\dd\rbr{z \intprod \mfrakL}
-\nonumber \\
-&= \int \lambda\,\frac{1}{2}\,\dd\cbr{
-	- z\intprod F\wedge\star F }\,,
+\dva_{\lambda} S = \int \lambda\,\dd\rbr{z \intprod \mfrakL}
+= \int \lambda\,\frac{1}{2}\,\dd\cbr{
+	- z\intprod \rbr{F\wedge\star F} }\,,
 \end{align}
-under the rigid infinitesimal transformation
+under the rigid infinitesimal transformation combined with a gauge 
+transformation
 \begin{align}
-\dva A = 
+\dva A = \lambda\cbr{z\intprod \dd \rbr{A-\dd\Lambda} + 
+	\dd\sbr{z\intprod\rbr{A-\dd\Lambda}}}\,.
+\end{align}
+Choosing
+\begin{align}
+\dd\Lambda = \rfun{A}{z}\,z^{\flat}
+\end{align}
+makes the second term vanish, yielding
+\begin{align}
+\dva A = \lambda\,z\intprod \dd A = \lambda\,z\intprod F \,.
 \end{align}
 
 When the equations of motion are satisfied, infinitesimal 
 transformation leads to
 \begin{align}
-\dva_{\lambda} S = \int \lambda\,\dd \,.
+\dva_{\lambda} S = \int \lambda\,\dd\cbr{-\rbr{z\intprod F}\wedge\star F}\,.
 \end{align}
 Taking the difference and setting $z = \mscre_{\alpha}$ yields
 \begin{align}
 0 &= \int \lambda\,\dd \mfrakT_{\alpha}, \\
 \begin{split}
-2 \mfrakT_{\alpha} &\coloneqq \,.
+2 \mfrakT_{\alpha} &\coloneqq -\rbr{\mscre_{\alpha}\intprod F}\wedge\star F +
+	F \wedge\rbr{\mscre_{\alpha}\intprod\star F}\,.
 \end{split}
 \end{align}
 The continuity equation reads
