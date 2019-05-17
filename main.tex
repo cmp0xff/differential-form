@@ -144,6 +144,72 @@ $k$-form, $\chi$ be a $(k-1)$-form.
 \dd^{\dagger} \phi = (-)^{k} \star^{-1} \dd \star \phi\,.
 \end{empheq}
 
+\paragraph{Untwisted orthonormal $k$-cobases}
+Let $\cbr{\vartheta^{\alpha}}$ be an orthonormal coframe. The orthonormal 
+basis for untwisted $k$-form is defined inductively as
+\begin{align}
+1&\,, \\
+\vartheta^{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} &\coloneqq 
+	\vartheta^{\alpha_{1}} \wedge \vartheta^{\alpha_{2}\ldots \alpha_{k}}\,.
+\end{align}
+
+\paragraph{Twisted orthonormal $k$-cobases}
+Let $\cbr{\vartheta^{\alpha}}$ be an orthonormal coframe. The orthonormal 
+basis for twisted $\rbr{D-k}$-form is defined inductively as
+\begin{align}
+\epsilon &\coloneqq \mathrm{vol}\,, \\
+\epsilon_{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} &\coloneqq
+\mscre_{\alpha_{k}} \intprod \epsilon_{\alpha_{1}\ldots \alpha_{k-1}}\,.
+\end{align}
+
+By using \cref{eq:hodge-100} and induction, one can show that
+\begin{align}
+\epsilon_{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} =
+\star \vartheta_{\alpha_{1}\alpha_{2}\ldots \alpha_{k}}\,.
+\end{align}
+
+\paragraph{Identities}
+
+Inspired by \cite[eq.\ (3.167)]{Straumann2013}, for a $1$-form $\omega$,
+$k$-form $\chi$, one can derive
+\begin{align}
+\omega\wedge\star\chi &= \rbr{-}^{D-k}\star\chi\wedge\omega
+= \rbr{-}^{D-k} \star^{-1}
+	\rbr{\omega^\sharp\intprod\star\star\chi}
+\nonumber \\
+&= \rbr{-}^{D-k} \rbr{-}^{(D-k-1)(k+1)+s}\star
+	\rbr{\omega^\sharp\intprod \rbr{-}^{k(D-k)+s}
+		\star^{-1}\star\chi }
+\nonumber \\
+&= \rbr{-}^{k+1} \star\rbr{\omega^\sharp\intprod \chi }\,.
+\end{align}
+Specifically,
+\begin{align}
+\vartheta^{\alpha}\wedge\epsilon_{\beta\gamma}
+&= -\delta^{\alpha}_{\beta}\,\epsilon_{\gamma}
+	+\delta^{\alpha}_{\gamma}\,\epsilon_{\beta}\,,
+\\
+\vartheta^{\alpha}\wedge\epsilon_{\beta\gamma\delta} &=
+\delta^{\alpha}_{\beta}\,\epsilon_{\gamma\delta} -
+\delta^{\alpha}_{\gamma}\,\epsilon_{\beta\delta} +
+\delta^{\alpha}_{\delta}\,\epsilon_{\beta\gamma}\,.
+\end{align}
+One can further deduce that
+\begin{align}
+\begin{split}
+\vartheta^{\alpha\beta}\wedge\epsilon_{\gamma\delta\epsilon} &=
+\rbr{\delta^{\alpha}_{\gamma}\delta^{\beta}_{\delta}-
+	\delta^{\alpha}_{\delta}\delta^{\beta}_{\gamma}}\epsilon_{\epsilon}
+\\
+&\quad\, -
+\rbr{\delta^{\alpha}_{\gamma}\delta^{\beta}_{\epsilon}-
+	\delta^{\alpha}_{\epsilon}\delta^{\beta}_{\gamma}}\epsilon_{\delta}
+\\
+&\quad\, +
+\rbr{\delta^{\alpha}_{\delta}\delta^{\beta}_{\epsilon}-
+	\delta^{\alpha}_{\epsilon}\delta^{\beta}_{\delta}}\epsilon_{\gamma}\,.
+\end{split}
+\end{align}
 
 \subsection{Complex scalar field}
 
@@ -344,52 +410,6 @@ dropped, and one obtains the Noether identity
 
 \subsection{Differential geometry}
 
-\paragraph{Untwisted orthonormal $k$-cobases}
-Let $\cbr{\vartheta^{\alpha}}$ be an orthonormal coframe. The orthonormal 
-basis for untwisted $k$-form is defined inductively as
-\begin{align}
-1&\,, \\
-\vartheta^{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} &\coloneqq 
-	\vartheta^{\alpha_{1}} \wedge \vartheta^{\alpha_{2}\ldots \alpha_{k}}\,.
-\end{align}
-
-\paragraph{Twisted orthonormal $k$-cobases}
-Let $\cbr{\vartheta^{\alpha}}$ be an orthonormal coframe. The orthonormal 
-basis for twisted $\rbr{D-k}$-form is defined inductively as
-\begin{align}
-\epsilon &\coloneqq \mathrm{vol}\,, \\
-\epsilon_{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} &\coloneqq
-\mscre_{\alpha_{k}} \intprod \epsilon_{\alpha_{1}\ldots \alpha_{k-1}}\,.
-\end{align}
-
-By using \cref{eq:hodge-100} and induction, one can show that
-\begin{align}
-\epsilon_{\alpha_{1}\alpha_{2}\ldots \alpha_{k}} =
-\star \vartheta_{\alpha_{1}\alpha_{2}\ldots \alpha_{k}}\,.
-\end{align}
-
-\paragraph{Identities}
-
-Inspired by \cite[eq.\ (3.167)]{Straumann2013}, for a $1$-form $\omega$,
-$\rbr{D-k}$-form $\chi$, one can derive
-\begin{align}
-\omega\wedge\star\chi &= \rbr{-}^{D-k}\star\chi\wedge\omega
-= \rbr{-}^{D-k} \star^{-1}
-	\rbr{\omega^\sharp\intprod\star\star\chi}
-\nonumber \\
-&= \rbr{-}^{D-k} \rbr{-}^{(D-k-1)(k+1)+s}\star
-	\rbr{\omega^\sharp\intprod \rbr{-}^{k(D-k)+s}
-		\star^{-1}\star\chi }
-\nonumber \\
-&= \rbr{-}^{k+1} \star\rbr{\omega^\sharp\intprod \chi }\,.
-\end{align}
-Specifically,
-\begin{align}
-\vartheta^{\alpha}\wedge\epsilon_{\beta\gamma}
-= -\delta^{\alpha}_{\beta}\epsilon_{\gamma}
-	+\delta^{\alpha}_{\gamma}\epsilon_{\beta}\,.
-\end{align}
-
 \paragraph{Translation}
 
 Consider the rigid infinitesimal transformation
@@ -434,14 +454,14 @@ Taking the difference and setting $z = \mscre_{\alpha}$ yields
 0 &= \int \lambda\,\dd \mfrakT_{\alpha}, \\
 \begin{split}
 2 \mfrakT_{\alpha} &\coloneqq
-\rbr{\mscre_{\alpha}\intprod\dd\phi^*}\wedge\star\dd\phi +
+-\rbr{\mscre_{\alpha}\intprod\dd\phi^*}\wedge\star\dd\phi -
 \dd\phi^*\wedge\rbr{\mscre_{\alpha}\intprod\star\dd\phi}
 \\
-&\quad\,+
-\rbr{\mscre_{\alpha}\intprod\dd\phi}\wedge\star\dd\phi^* +
+&\quad\,-
+\rbr{\mscre_{\alpha}\intprod\dd\phi}\wedge\star\dd\phi^* -
 \dd\phi\wedge\rbr{\mscre_{\alpha}\intprod\star\dd\phi^*}
 \\
-&\quad\,-
+&\quad\,+
 m^2\rbr{\phi^*\,\mscre_{\alpha}\intprod\star\phi +
 	\phi\,\mscre_{\alpha}\star\phi^*}\,.
 \end{split}
@@ -453,12 +473,12 @@ The continuity equation reads
 In components,
 \begin{align}
 \mfrakT_{\alpha} =
-\rbr{\rfun{\mscre_{\alpha}}{\phi^*} \rfun{\mscre^{\beta}}{\phi}+
+-\sbr{\rfun{\mscre_{\alpha}}{\phi^*} \rfun{\mscre^{\beta}}{\phi}+
 	\rfun{\mscre_{\alpha}}{\phi} \rfun{\mscre^{\beta}}{\phi^*}}\,
-		\epsilon_{\beta} - 
+		\epsilon_{\beta} +
 \rfun{\mscre^{\beta}}{\phi^*} \rfun{\mscre_{\beta}}{\phi^*}\,
 	\epsilon_{\alpha}
-- m^2 \phi^* \phi\, \epsilon_{\alpha}\,.
++ m^2 \phi^* \phi\, \epsilon_{\alpha}\,.
 \end{align}
 
 \subsection{Pure electromagnetic field}
@@ -502,9 +522,27 @@ The continuity equation reads
 \begin{align}
 \dd \mfrakT_{\alpha} = 0\,.
 \end{align}
-In components,
+In components, one needs
 \begin{align}
-\mfrakT_{\alpha} = \,.
+\mscre_{\alpha}\intprod F &= F_{\alpha\beta}\,\vartheta^{\beta}\,,
+\\
+\mscre_{\alpha}\intprod \star F &=
+	\frac{1}{2} F^{\beta\gamma}\,\epsilon_{\beta\gamma\alpha}\,;
+\end{align}
+so that
+\begin{align}
+\rbr{\mscre_{\alpha}\intprod F}\wedge \star F &=
+	- F_{\alpha\gamma} F^{\gamma\beta}\,\epsilon_{\beta}\,,
+\\
+F\wedge\rbr{\mscre_{\alpha}\intprod\star F} &=
+	\frac{1}{2} F_{\beta\gamma} F^{\beta\gamma}\,\epsilon_{\alpha} +
+	F_{\alpha\gamma} F^{\gamma\beta}\,\epsilon_{\beta}\,.
+\end{align}
+One finally has
+\begin{align}
+\mfrakT_{\alpha} =
+	\frac{1}{4} F_{\beta\gamma} F^{\beta\gamma}\,\epsilon_{\alpha} +
+	F_{\alpha\gamma} F^{\gamma\beta}\,\epsilon_{\beta}\,.
 \end{align}
 
 
