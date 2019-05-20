@@ -77,6 +77,15 @@ shapes.geometric}
 \tableofcontents
 
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
+\section{Introduction}
+
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
+
+This note is intended to be pragmatic, collecting a set of toolkits for the 
+calculation of field theories without and with gravitation. The physical 
+motivation will be discussed elsewhere.
+
+%1234567890123456789012345678901234567890123456789012345678901234567890123456789
 \section{Complex scalar field}
 
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
@@ -96,7 +105,8 @@ Variation commutes with exterior derivative
 \sbr{\dva, \dd}\phi = 0\,.
 \end{align}
 
-A generic variation of the kinetic terms reads
+In the absence of gravitation, variation also commutes with Hodge star. A 
+generic variation of the kinetic terms therefore reads
 \begin{align}
 \begin{split}
 \dva \rbr{\dd \phi^*\wedge\star\dd\phi} &= 
@@ -104,11 +114,11 @@ A generic variation of the kinetic terms reads
 \\
 &\quad\,+
 \dva\phi^*\wedge\star\dd^{\dagger}\dd\phi +
-\dva\phi\wedge\star\dd^{\dagger}\dd\phi^*\,.
+\dva\phi\wedge\star\dd^{\dagger}\dd\phi^*\,,
 \end{split}
 \end{align}
-
-A generic variation of the actionreads
+where the codifferential is defined in \cref{eq:codiff-def-10}.
+A generic variation of the action reads
 \begin{align}
 \dva S &=
 \int \dd\rbr{-\dva\phi^*\wedge\star\dd\phi -
@@ -153,40 +163,44 @@ equation
 %123456789012345678901234567890123456789
 The action is invariant up to a total differential
 \begin{align}
-\dva_{\lambda} S &= \int \lambda\,\dd\rbr{z \intprod \mfrakL}
+\dva_{\lambda} S &= \int - \lambda\,\dd\rbr{z \intprod \mfrakL}
 \nonumber \\
 &= \int \lambda\,\frac{1}{2}\,\dd\cbr{
-	- z\intprod\sbr{\dd\phi^*\wedge\star\dd\phi +
+	+ z\intprod\sbr{\dd\phi^*\wedge\star\dd\phi +
 	\dd\phi\wedge\star\dd\phi^* +
 	m^2\rbr{\phi^*\,\star\phi
 	+\phi\,\star\phi^*}}}\,,
+\label{eq:tot-dif-ckg-10}
 \end{align}
 under the rigid infinitesimal transformation
 \begin{align}
-\dva\phi = \lambda\, \pounds_z \phi = \lambda\, z \intprod \dd \phi\,,\qquad
-\dva\phi^* = \lambda\, \pounds_z \phi^* = \lambda\, z \intprod \dd \phi^*\,.
+\dva\phi = -\lambda\, \pounds_z \phi = -\lambda\, z \intprod \dd \phi\,,\qquad
+\dva\phi^* = -\lambda\, \pounds_z \phi^* = -\lambda\, z \intprod \dd \phi^*\,.
 \end{align}
+Note the minus sign, which has to do with our mostly-positive metric convention 
+$\rbr{-, +, \ldots, +}$.
 
 When the equations of motion are satisfied, infinitesimal 
 transformation leads to
 \begin{align}
 \dva_{\lambda} S = \int \lambda\,\dd\cbr{
-	-\rbr{z\intprod\dd\phi^*}\wedge\star\dd\phi
-	-\rbr{z\intprod\dd\phi}\wedge\star\dd\phi^*}\,.
+	+\rbr{z\intprod\dd\phi^*}\wedge\star\dd\phi
+	+\rbr{z\intprod\dd\phi}\wedge\star\dd\phi^*}\,.
 \end{align}
-Taking the difference and setting $z = \mscre_{\alpha}$ yields
+Taking the difference with \cref{eq:tot-dif-ckg-10} and setting $z = 
+\mscre_{\alpha}$ yield
 \begin{align}
 0 &= \int \lambda\,\dd \mfrakT_{\alpha}, \\
 \begin{split}
 2 \mfrakT_{\alpha} &\coloneqq
--\rbr{\mscre_{\alpha}\intprod\dd\phi^*}\wedge\star\dd\phi -
++\rbr{\mscre_{\alpha}\intprod\dd\phi^*}\wedge\star\dd\phi +
 \dd\phi^*\wedge\rbr{\mscre_{\alpha}\intprod\star\dd\phi}
 \\
-&\quad\,-
-\rbr{\mscre_{\alpha}\intprod\dd\phi}\wedge\star\dd\phi^* -
+&\quad\,+
+\rbr{\mscre_{\alpha}\intprod\dd\phi}\wedge\star\dd\phi^* +
 \dd\phi\wedge\rbr{\mscre_{\alpha}\intprod\star\dd\phi^*}
 \\
-&\quad\,+
+&\quad\,-
 m^2\rbr{\phi^*\,\mscre_{\alpha}\intprod\star\phi +
 	\phi\,\mscre_{\alpha}\star\phi^*}\,.
 \end{split}
@@ -198,9 +212,9 @@ The continuity equation reads
 In components,
 \begin{align}
 \mfrakT_{\alpha} =
--\sbr{\rfun{\mscre_{\alpha}}{\phi^*} \rfun{\mscre^{\beta}}{\phi}+
++\sbr{\rfun{\mscre_{\alpha}}{\phi^*} \rfun{\mscre^{\beta}}{\phi}+
 	\rfun{\mscre_{\alpha}}{\phi} \rfun{\mscre^{\beta}}{\phi^*}}\,
-		\epsilon_{\beta} +
+		\epsilon_{\beta} -
 \sbr{\rfun{\mscre^{\beta}}{\phi^*} \rfun{\mscre_{\beta}}{\phi^*}
 	+ m^2 \phi^* \phi}\, \epsilon_{\alpha}\,.
 \end{align}
@@ -209,6 +223,19 @@ In components,
 \section{Pure electromagnetic field}
 
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
+
+The action reads
+\begin{align}
+S = \int -\frac{1}{2} F \wedge \star F\,.
+\end{align}
+Variation of the Lagrangian reads
+\begin{align}
+\dva \rbr{F\wedge\star F} &=
+	2\,\dva F \wedge \star F
+\\ &=
+	2\,\dd\rbr{\dva A \wedge \star F} + 2\,\dva A \wedge \dd {\star F}\,.
+\end{align}
+Note that this is not gauge invariant.
 
 \subsection{Lorenz gauge}
 The Laplace--de Rham operator, or in our Lorentzian metric signature the 
@@ -234,14 +261,15 @@ which is the Lorenz gauge\cite{Lorenz1867,Bladel1991a,Bladel1991b}.
 %123456789012345678901234567890123456789
 The action is invariant up to a total differential
 \begin{align}
-\dva_{\lambda} S = \int \lambda\,\dd\rbr{z \intprod \mfrakL}
+\dva_{\lambda} S = - \int \lambda\,\dd\rbr{z \intprod \mfrakL}
 = \int \lambda\,\frac{1}{2}\,\dd\cbr{
-	- z\intprod \rbr{F\wedge\star F} }\,,
+	+ z\intprod \rbr{F\wedge\star F} }\,,
+\label{eq:tot-diff-em-10}
 \end{align}
 under the rigid infinitesimal transformation combined with a gauge 
 transformation \cite[eq.\ 3.46]{Scheck2017}
 \begin{align}
-\dva A = \lambda\cbr{z\intprod \dd \rbr{A-\dd\Lambda} + 
+\dva A = - \lambda\cbr{z\intprod \dd \rbr{A-\dd\Lambda} + 
 	\dd\sbr{z\intprod\rbr{A-\dd\Lambda}}}\,.
 \end{align}
 Choosing
@@ -250,19 +278,20 @@ Choosing
 \end{align}
 makes the second term vanish, yielding
 \begin{align}
-\dva A = \lambda\,z\intprod \dd A = \lambda\,z\intprod F \,.
+\dva A = - \lambda\,z\intprod \dd A = - \lambda\,z\intprod F \,.
 \end{align}
 
 When the equations of motion are satisfied, infinitesimal 
 transformation leads to
 \begin{align}
-\dva_{\lambda} S = \int \lambda\,\dd\cbr{-\rbr{z\intprod F}\wedge\star F}\,.
+\dva_{\lambda} S = \int \lambda\,\dd\cbr{+\rbr{z\intprod F}\wedge\star F}\,.
 \end{align}
-Taking the difference and setting $z = \mscre_{\alpha}$ yields
+Taking the difference with \cref{eq:tot-diff-em-10} and setting $z = 
+\mscre_{\alpha}$ yield
 \begin{align}
 0 &= \int \lambda\,\dd \mfrakT_{\alpha}, \\
 \begin{split}
-2 \mfrakT_{\alpha} &\coloneqq -\rbr{\mscre_{\alpha}\intprod F}\wedge\star F +
+2 \mfrakT_{\alpha} &\coloneqq +\rbr{\mscre_{\alpha}\intprod F}\wedge\star F -
 	F \wedge\rbr{\mscre_{\alpha}\intprod\star F}\,.
 \end{split}
 \end{align}
@@ -277,7 +306,7 @@ In components, one needs
 \mscre_{\alpha}\intprod \star F &=
 	\frac{1}{2} F^{\beta\gamma}\,\epsilon_{\beta\gamma\alpha}\,;
 \end{align}
-so that
+equipped with \crefrange{eq:id-cof-10}{eq:id-cof-10}, one arrives at
 \begin{align}
 \rbr{\mscre_{\alpha}\intprod F}\wedge \star F &=
 	- F_{\alpha\gamma} F^{\gamma\beta}\,\epsilon_{\beta}\,,
@@ -289,8 +318,8 @@ F\wedge\rbr{\mscre_{\alpha}\intprod\star F} &=
 One finally has
 \begin{align}
 \mfrakT_{\alpha} =
-	\frac{1}{4} F_{\beta\gamma} F^{\beta\gamma}\,\epsilon_{\alpha} +
-	F_{\alpha\gamma} F^{\gamma\beta}\,\epsilon_{\beta}\,.
+	-F_{\alpha\gamma} F^{\gamma\beta}\,\epsilon_{\beta}
+	-\frac{1}{4} F_{\beta\gamma} F^{\beta\gamma}\,\epsilon_{\alpha} \,.
 \end{align}
 
 
@@ -299,36 +328,37 @@ One finally has
 {$\msansU(1)$-gauged complex scalar field theory}
 
 %1234567890123456789012345678901234567890123456789012345678901234567890123456789
+The action reads
 \begin{align}
 S = \int -\DD\phi^*\wedge\star\DD\phi - m^2 \phi^*\wedge\star\phi
-	-\frac{1}{2} F \wedge \star F.
+	-\frac{1}{2} F \wedge \star F\,,
 \end{align}
+where the exterior covariant derivative is defined in 
+\cref{eq:def-ext-cov-der-bun-10}.
 
-Variation does not commute with exterior covariant derivative.
+Variation does \emph{not} commute with exterior covariant derivative.
 \begin{align}
 \sbr{\dva, \DD}\phi = -\ii e \dva A\phi\,.
 \end{align}
 
+Variation of the covariant kinetic term reads
 \begin{align}
 \begin{split}
 \dva \rbr{\DD \phi^*\wedge\star\DD\phi} &= 
-\dd\rbr{\dva\phi^* \star\DD\phi + \dva\phi \star\DD\phi^*} +
-	\dva\phi^*\wedge\star\DD^{\dagger}\DD\phi +
-	\dva\phi\wedge\star\DD^{\dagger}\DD\phi^*
+\dd\rbr{\dva\phi^* \star\DD\phi + \dva\phi \star\DD\phi^*} 
 \\ &\quad\,+
-\dva A \wedge \mfrakJ_A \,,
-\qquad
-\mfrakJ_A \coloneqq 
-	\ii e \rbr{\phi^* \star\DD\phi - \phi\star\DD\phi^*}\,,
+	\dva\phi^*\wedge\star\DD^{\dagger}\DD\phi +
+	\dva\phi\wedge\star\DD^{\dagger}\DD\phi^* +
+	\dva A \wedge \mfrakJ_A \,,
 \end{split}
-\\
-\dva \rbr{F\wedge\star F} &=
-	2\,\dva F \wedge \star F
-\\ &=
-	2\,\dd\rbr{\dva A \wedge \star F} + 2\,\dva A \wedge \dd {\star F}\,.
+\end{align}
+where the covariant codifferential is defined in \cref{eq:def-cov-cod-10}, and
+\begin{align}
+\mfrakJ_A &\coloneqq 
+	\ii e \rbr{\phi^* \star\DD\phi - \phi\star\DD\phi^*}\,.
 \end{align}
 
-Variation of the action
+A generic variation of the action then reads
 \begin{align}
 \dva S &=
 \int \dd\rbr{-\dva\phi^*\wedge\star\DD\phi -
@@ -362,26 +392,23 @@ the Noether current from the boundary term as before, which satisfies the
 continuity equation $\dd \mfrakJ_A = 0$.
 
 If the transformation is gauge with a compact support, the boundary term can be
-dropped, and one obtains the Noether identity
-\begin{align}
-123
-\end{align}
+dropped, and one obtains a Noether identity, which is under construction.
 
-\begin{align}
-\begin{split}
-\Sigma_{\alpha} &=
-	-\DD\phi^* \wedge \cbr{\star\rbr{\mscre_{\alpha}\intprod \DD\phi} +
-		\rbr{\mscre_{\alpha}\intprod\star\DD\phi}}
--m^2\phi^*\phi\,\epsilon_{\alpha}
-\\
-&\quad\,
-- \frac{1}{2} F \wedge \cbr{\star\rbr{\mscre_{\alpha}\intprod F} -
-		\rbr{\mscre_{\alpha}\intprod \star F}}\,.
-\end{split}
-\end{align}
+%\begin{align}
+%\begin{split}
+%\Sigma_{\alpha} &=
+%	-\DD\phi^* \wedge \cbr{\star\rbr{\mscre_{\alpha}\intprod \DD\phi} +
+%		\rbr{\mscre_{\alpha}\intprod\star\DD\phi}}
+%-m^2\phi^*\phi\,\epsilon_{\alpha}
+%\\
+%&\quad\,
+%- \frac{1}{2} F \wedge \cbr{\star\rbr{\mscre_{\alpha}\intprod F} -
+%		\rbr{\mscre_{\alpha}\intprod \star F}}\,.
+%\end{split}
+%\end{align}
 
 %123456789012345678901234567890123456789
-\subsection[$T(D)$ Noether current]{$\msansT(D)$ Noether current}
+%\subsection[$T(D)$ Noether current]{$\msansT(D)$ Noether current}
 
 %123456789012345678901234567890123456789
 
@@ -397,9 +424,9 @@ dropped, and one obtains the Noether identity
 
 \subsection{Basic operations}
 
-Following the style of \cite[sec.\ 24]{Burke1985}, it is attempted to define 
-the operations inductively, instead of giving explicit expressions, which is 
-much less effective than the former in practice.
+Following the style of \cite{Burke1985}, it is attempted to define 
+the operations \emph{inductively}, instead of giving explicit expressions, 
+which is much less effective than the former in practice.
 
 \paragraph{Interior product}
 
@@ -407,7 +434,10 @@ Let $z$ be a vector, $\omega$ be a $1$-form, $\chi$ be a $k$-form.
 The \emph{interior product} is defined inductively as the bilinear map
 satisfying
 \begin{align}
-z \intprod \omega &\coloneqq \rfun{\omega}{z}\,, \\
+z \intprod 1 &= 0\,,
+\\
+z \intprod \omega &\coloneqq \rfun{\omega}{z}\,,
+\\
 z \intprod \rbr{\omega \wedge \chi} &\coloneqq
 	\rbr{z\intprod\omega}\wedge \chi - \omega \wedge \rbr{z\intprod \chi}\,.
 \label{eq:anti-prod-100}
@@ -441,7 +471,7 @@ for an orthonormal coframe, the allowed variations are
 $\omega_{(\alpha\beta)} = 0$.
 
 
-\paragraph{Identities}
+\paragraph{Identity}
 
 Inspired by \cite[eq.\ (3.167)]{Straumann2013}, for a $1$-form $\omega$,
 $k$-form $\chi$, one can derive
@@ -455,12 +485,13 @@ $k$-form $\chi$, one can derive
 		\star^{-1}\star\chi }
 \nonumber \\
 &= \rbr{-}^{k+1} \star\rbr{\omega^\sharp\intprod \chi }\,.
+\label{eq:ident-10}
 \end{align}
+This will be useful in \crefrange{eq:id-cof-10}{eq:id-cof-30}.
 
 
 \paragraph{Codifferential}
-The \emph{codifferential} $\dd^\dagger$ is the adjoint of the 
-exterior derivative $\dd$ in the following sense. Let $\phi$ be a 
+The \emph{codifferential} $\dd^\dagger$ is defined as follows. Let $\phi$ be a 
 $k$-form, $\chi$ be a $(k-1)$-form.
 \begin{align}
 \dd\rbr{\chi^* \wedge \star \phi} &\equiv
@@ -472,14 +503,25 @@ $k$-form, $\chi$ be a $(k-1)$-form.
 \dd \chi^* \wedge \star \phi - \chi^* \wedge 
 	\star (-)^{k} \star^{-1} \dd \star \phi\,.
 \end{align}
+In other words,
 \begin{empheq}[box=\fbox]{align}
 \dd^{\dagger} \phi = (-)^{k} \star^{-1} \dd \star \phi\,.
+\label{eq:codiff-def-10}
 \end{empheq}
+If $\int \dd\rbr{\chi^* \wedge \star \phi} = 0$, then $\dd^\dagger$ is the 
+adjoint of the exterior derivative $\dd$ in functional sense.
 
 %123456789012345678901234567890123456789
 \subsection{Coframe bases}
 
 %123456789012345678901234567890123456789
+
+Coframes come into play if an explicit expression in components is wanted, or
+if gravitation comes into play.
+
+For a detailed discussion about the meaning of untwisted (describing 
+extensions) and twisted (describing densities) differential forms, see e.g.\
+\cite[sec.\ 22, 28]{Burke1985}.
 
 \paragraph{Untwisted orthonormal $k$-cobases}
 
@@ -507,21 +549,23 @@ By using \cref{eq:hodge-100} and induction, one can show that
 \end{align}
 
 \paragraph{Identities}
-
+The following identities come from \cref{eq:ident-10}
 \begin{align}
 \vartheta^{\alpha}\wedge\epsilon_{\beta\gamma}
 &= -\delta^{\alpha}_{\beta}\,\epsilon_{\gamma}
 	+\delta^{\alpha}_{\gamma}\,\epsilon_{\beta}\,,
+\label{eq:id-cof-10}
 \\
 \vartheta^{\alpha}\wedge\epsilon_{\beta\gamma\delta} &=
 \delta^{\alpha}_{\beta}\,\epsilon_{\gamma\delta} -
 \delta^{\alpha}_{\gamma}\,\epsilon_{\beta\delta} +
 \delta^{\alpha}_{\delta}\,\epsilon_{\beta\gamma}\,.
+\label{eq:id-cof-20}
 \end{align}
 One can further deduce that
 \begin{align}
 \begin{split}
-\vartheta^{\alpha\beta}\wedge\epsilon_{\gamma\delta\epsilon} &=
+\vartheta^{\alpha\beta}\wedge\epsilon_{\gamma\delta\epsilon} &= +
 \rbr{\delta^{\alpha}_{\gamma}\delta^{\beta}_{\delta}-
 	\delta^{\alpha}_{\delta}\delta^{\beta}_{\gamma}}\epsilon_{\epsilon}
 \\
@@ -533,24 +577,42 @@ One can further deduce that
 \rbr{\delta^{\alpha}_{\delta}\delta^{\beta}_{\epsilon}-
 	\delta^{\alpha}_{\epsilon}\delta^{\beta}_{\delta}}\epsilon_{\gamma}\,.
 \end{split}
+\label{eq:id-cof-30}
 \end{align}
+\Crefrange{eq:id-cof-10}{eq:id-cof-30} are useful in constructing explicit 
+expressions in components.
+
+\paragraph{Translation}
+
+Consider the rigid infinitesimal transformation
+\begin{align}
+\dva_{\lambda}\chi = \lambda\, \pounds_z \chi =
+	\lambda\sbr{z\intprod\dd\chi + \dd\rbr{z\intprod\chi}}\,;
+\end{align}
+`rigid' means
+\begin{align}
+\dva_{\lambda} \vartheta^{\alpha} = 0\,.
+\end{align}
+
 
 \subsection{Connection on the principal bundle}
 
 \paragraph{Exterior covariant derivative}
-Let $\chi$ be a $\BbbC$-valued $k$-form. The \emph{exterior covariant derivative} of 
+Let $\chi$ be a $\BbbC$-valued $k$-form. The 
+\emph{exterior covariant derivative} of 
 $\chi$ reads
 \begin{align}
 \DD\chi \coloneqq \rbr{\dd - \ii e A}\chi,
 \qquad
 \DD\chi^* \coloneqq \rbr{\dd + \ii e A}\chi^*\,,
+\label{eq:def-ext-cov-der-bun-10}
 \end{align}
 where $A$ is a $\mfraku(1)$-valued \emph{connection form}.
 
 \paragraph{Covariant codifferential}
-The \emph{covariant codifferential} $\DD^\dagger$ is the adjoint of the 
-exterior covariant derivative $\DD$ in the following sense. Let $\phi$ be a 
-$\BbbC$-valued $k$-form, $\chi$ be a $\BbbC$-valued $(k-1)$-form.
+The \emph{covariant codifferential} $\DD^\dagger$ is defined as follows. 
+Let $\phi$ be a $\BbbC$-valued $k$-form, $\chi$ be a 
+$\BbbC$-valued $(k-1)$-form.
 \begin{align}
 \dd\rbr{\chi^* \wedge \star \phi} &\equiv
 \dd \chi^* \wedge \star \phi - (-)^{k} \chi^* \wedge \dd\star\phi
@@ -570,22 +632,15 @@ $\BbbC$-valued $k$-form, $\chi$ be a $\BbbC$-valued $(k-1)$-form.
 \DD \chi^* \wedge \star \phi - \chi^* \wedge 
 	\star (-)^{k} \star^{-1} \rbr{\dd - \ii e A} \star \phi\,.
 \end{align}
+In other words,
 \begin{empheq}[box=\fbox]{align}
 \DD^{\dagger} \phi = (-)^{k} \star^{-1}
 	\rbr{\dd - \ii e A} \star \phi\,.
+\label{eq:def-cov-cod-10}
 \end{empheq}
+If $\int \dd\rbr{\chi^* \wedge \star \phi} = 0$, $\DD^\dagger$ becomes the 
+adjoint of the exterior covariant derivative $\DD$ in the functional sense.
 
-\paragraph{Translation}
-
-Consider the rigid infinitesimal transformation
-\begin{align}
-\dva_{\lambda}\chi = \lambda\, \pounds_z \chi =
-	\lambda\sbr{z\intprod\dd\chi + \dd\rbr{z\intprod\chi}}\,;
-\end{align}
-`rigid' means
-\begin{align}
-\dva_{\lambda} \vartheta^{\alpha} = 0\,.
-\end{align}
 
 %123456789012345678901234567890123456789
 \subsection{Variation of coframe bases}
